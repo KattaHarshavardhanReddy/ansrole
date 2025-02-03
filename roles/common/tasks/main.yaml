@@ -1,11 +1,12 @@
-- name: remove files
+- name: remove existing directory
   ansible.builtin.file:
-    path: "{{ app_loc }}"
+    path: "{{ app_loc }}"           #"/app" for backend and "/use/share/nginx/html" for frontend
     state: absent
 
-- name: create files
+
+- name: create existing directory
   ansible.builtin.file:
-    path: "{{ app_loc }}"
+    path: "{{ app_loc }}"           #"/app" for backend and "/use/share/nginx/html" for frontend
     state: directory
 
 - name: unzip files
