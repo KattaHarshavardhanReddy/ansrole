@@ -30,3 +30,8 @@
 - name: install dependencies
   community.general.npm:
     path: /app
+
+- name: copy file
+    ansible.builtin.template:
+    src: backend.service
+    dest: /etc/systemd/system/backend.service
