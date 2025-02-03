@@ -23,7 +23,7 @@
     login_password: "{{ u_pwd }}"
     login_host: mysql.katta.blog
   register: mysql_info
-  ignore_error: true
+  ignore_errors: true
 
 - name: print the output
   ansible.builtin.debug:
