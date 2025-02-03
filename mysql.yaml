@@ -1,0 +1,5 @@
+- name: config mysql using ansible roles
+  hosts: local
+  connection: local
+  tasks:
+  
