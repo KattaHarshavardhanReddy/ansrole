@@ -1,9 +1,9 @@
-- name : install mysql
+- name: installing mysql
   ansible.builtin.package:
     name: mysql-server
-    status: present
+    state: present
 
-- name : start and enable the service
+- name: start and enable the service
   ansible.builtin.service:
     name: mysqld
     state: started
