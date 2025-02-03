@@ -40,3 +40,12 @@
   ansible.builtin.template:
     src: backend.service
     dest: /etc/systemd/system/backend.service
+
+- name: import mysql data
+  community.mysql.mysql_db:
+    state: import
+    name: all
+    login_user: root
+    login_password: "{{ u_pwd }}"
+    login_host: "{{u_host }}"
+    target: /app/schema/backend.sql
