@@ -1,10 +1,10 @@
 - name: remove files
-  ansible.builtin.files:
+  ansible.builtin.file:
     path: "{{ app_loc }}"
     state: absent
 
 - name: create files
-  ansible.builtin.files:
+  ansible.builtin.file:
     path: "{{ app_loc }}"
     state: directory
 
