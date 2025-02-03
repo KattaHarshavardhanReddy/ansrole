@@ -1,16 +1,23 @@
-  - name: install mysql
-    ansible.builtin.package:
-      name: mysql-server
-      state: installed
+- name: install python dependencies
+  ansible.builtin.pip:
+    name: "{{ item }}"
+    executable: pip3.9
+  loop:
+    - PyMySQL
 
-  - name: start and enable sql server
-    ansible.builtin.service:
-      name: mysqld
-      state: started
-      enabled: yes
+- name: install mysql
+  ansible.builtin.package:
+    name: mysql-server
+    state: installed
 
-  - name: connect to mysql server
-    community.mysql.mysql_info:
-      login_user: root
-      login_password: "{{ u_pwd }}"
-      login_host: mysql.katta.blog
+- name: start and enable sql server
+  ansible.builtin.service:
+    name: mysqld
+    state: started
+    enabled: yes
+
+- name: connect to mysql server
+  community.mysql.mysql_info:
+    login_user: root
+    login_password: "{{ u_pwd }}"
+    login_host: mysql.katta.blog
