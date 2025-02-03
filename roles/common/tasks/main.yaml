@@ -1,0 +1,15 @@
+- name: remove files
+  ansible.builtin.files:
+    path: "{{ app_loc }}"
+    state: absent
+
+- name: create files
+  ansible.builtin.files:
+    path: "{{ app_loc }}"
+    state: directory
+
+- name: unzip files
+  ansible.builtin.unarchive:
+    src: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ component }}-v2.zip"
+    dest: "{{ app_loc }}"
+    remote_src: yes
