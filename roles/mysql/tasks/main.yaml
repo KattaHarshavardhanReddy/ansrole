@@ -22,3 +22,8 @@
     login_user: root
     login_password: "{{ u_pwd }}"
     login_host: mysql.katta.blog
+  register: mysql_info
+
+- name: print the output
+  ansible.builtin.debug:
+    msg: " mysql info {{ mysql_info }}"
