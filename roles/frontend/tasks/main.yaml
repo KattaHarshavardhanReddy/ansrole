@@ -9,6 +9,11 @@
     state: started
     enabled: yes
 
+- name: include from common roles
+  include_role:
+    name: common
+    tasks_from: main
+
 # - name: remove old file
 #   ansible.builtin.file:
 #     path: /usr/share/nginx/html
