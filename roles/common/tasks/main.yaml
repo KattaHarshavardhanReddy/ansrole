@@ -1,16 +1,16 @@
 - name: remove existing directory
   ansible.builtin.file:
-    path: "{{ app_loc }}"           #"/app" for backend and "/use/share/nginx/html" for frontend
+    path: "{{ app_location }}"           #"/app" for backend and "/use/share/nginx/html" for frontend
     state: absent
 
 
 - name: create existing directory
   ansible.builtin.file:
-    path: "{{ app_loc }}"           #"/app" for backend and "/use/share/nginx/html" for frontend
+    path: "{{ app_location }}"           #"/app" for backend and "/use/share/nginx/html" for frontend
     state: directory
 
 - name: unzip files
   ansible.builtin.unarchive:
     src: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ component }}-v2.zip"
-    dest: "{{ app_loc }}"
+    dest: "{{ app_location }}"
     remote_src: yes

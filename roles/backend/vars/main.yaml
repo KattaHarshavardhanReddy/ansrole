@@ -1,4 +1,4 @@
 u_pwd: ExpenseApp@1
 u_host: mysql.katta.blog
-app_loc: /app
+app_location: /app
 component: backend
