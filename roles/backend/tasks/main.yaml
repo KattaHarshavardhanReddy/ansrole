@@ -57,3 +57,10 @@
     login_password: "{{ u_pwd }}"
     login_host: "{{u_host }}"
     target: /app/schema/backend.sql
+
+- name: daemon reload n restart
+    ansible.builtin.systemd_service:
+    state: restarted
+    daemon_reload: true
+    enabled: true
+    name: backend
