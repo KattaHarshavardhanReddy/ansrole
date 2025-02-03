@@ -3,3 +3,6 @@
 
 - name: enable node js
   ansible.builtin.command: dnf module enable nodejs:20 -y
+
+- name: enable node js
+  ansible.builtin.command: dnf install nodejs -y
