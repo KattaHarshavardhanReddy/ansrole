@@ -4,5 +4,7 @@
   vars_files:
   - roles/mysql/vars/vault.yaml
 
+  remote_src: yes
+
   roles:
   - mysql
