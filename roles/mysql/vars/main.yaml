@@ -1,1 +1,2 @@
- u_pwd: ExpenseApp@1
+#u_pwd: ExpenseApp@1
+mysql_hosts: mysql.katta.blog
